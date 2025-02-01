@@ -1,101 +1,523 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- font awesome cdn -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
-    crossorigin="anonymous" 
-    referrerpolicy="no-referrer" />
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Living-Lab-Main</title>
+  <!-- font awesome cdn -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 </head>
 <style>
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(30px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-    .animate-fadeIn {
-        animation: fadeIn 1s ease-out forwards;
-    }
+  @keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
 
-    @keyframes floating {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-10px); }
-    }
-    .animate-floating {
-        animation: floating 3s ease-in-out infinite;
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-floating {
+  animation: floating 3s ease-in-out infinite;
+}
+
+body {
+  font-family: 'ADLaM Display', sans-serif; 
+}
+
 </style>
+<script>
+  tailwind.config = {
+      theme: {
+          extend: {
+              colors: {
+                  clifford: '#da373d',
+                  nav:'red',
+                  bikeBg: 'rgba(231, 111, 81, 0.1)',
+              },
+          },
+      },
+  }
+</script>
 <body>
-   <header class=" ">
+  <header class="w-full h-[630px] md:h-[750px]">
     <nav class="bg-yellow-50">
-        
-       <div class="flex justify-between items-center md:container mx-auto px-5 py-3">
+
+      <div class="flex justify-between items-center md:container mx-auto px-5 py-3">
         <!-- Logo -->
         <div>
-            <div class="flex items-center gap-2 cursor-pointer">
-                <div>
-                    <img src="/c1-assets/logo-header.png" alt="">
-                </div>
-                <div>
-                    <h1 class="hidden md:block">Browse <span class="text-yellow-300">4</span>Pets</h1>
-                </div>
+          <div class="flex items-center gap-2 cursor-pointer">
+            <div>
+              <img src="/c1-assets/logo-header.png" alt="">
             </div>
+            <div>
+              <h1 class="hidden md:block ">Browse <span class="text-yellow-300">4</span>Pets</h1>
+            </div>
+          </div>
         </div>
         <!-- Middle -->
         <div class="hidden md:block">
-                <ul class="flex gap-5 ">
-                    <li>
-                        <a href="">Find a pet</a>
-                    </li>
-                    <li>
-                        <a href="">Breeds</a>
-                    </li>
-                    <li>
-                        <a href="">Contact us</a>
-                    </li>
-                </ul>
+          <ul class="flex gap-5 ">
+            <li class="p-5 bg-yellow-50  rounded-lg hover:scale-105 transition-all duration-300">
+              <a href="#" class="hover:text-black  transition duration-200">Find a Pet</a>
+            </li>
+            <li class="p-5 bg-yellow-50  rounded-lg hover:scale-105 transition-all duration-300">
+              <a href="#" class="hover:text-black a transition duration-200">Breeds</a>
+            </li>
+            <li class="p-5 bg-yellow-50  rounded-lg hover:scale-105 transition-all duration-300">
+              <a href="#" class="hover:text-black  transition duration-200">Contact Us</a>
+            </li>
+          </ul>
         </div>
         <!-- icone -->
         <div class="hidden md:block">
-            <div class="space-x-4">
-                <i class="fa-solid fa-bell"></i>
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <button class="bg-white border-1 border-orange-100 px-4 py-2 rounded-lg cursor-pointer">Login</button>
-                <button class="bg-yellow-400 px-5 py-2 rounded-lg font-bold cursor-pointer hover:bg-yellow-700 transition">Register</button>
-            </div>
+          <div class="space-x-4">
+            <i class="fa-solid fa-bell"></i>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <button class="bg-white border-1 border-orange-100 px-4 py-2 rounded-lg cursor-pointer">Login</button>
+            <button
+              class="bg-yellow-300 px-5 py-2 rounded-lg  cursor-pointer hover:bg-yellow-700 transition">Register</button>
+          </div>
         </div>
         <div class="block md:hidden text-xl">
-            <i class="fa-solid fa-bars  mr-5"></i>
+          <i class="fa-solid fa-bars  mr-5"></i>
         </div>
-       </div>
-       
+      </div>
+
     </nav>
     <hr class="w-full block md:hidden mt-2 bg-orange-500">
-    <div class="md:container mx-auto relative flex flex-col md:flex-row items-center px-6 py-12">
+    <section class="h-auto">
+      <div class="md:container  mx-auto relative flex flex-col md:flex-row items-center px-6 py-12 h-auto">
         <!-- Text Part -->
         <div class="relative z-10 max-w-lg md:w-1/2 animate-fadeIn">
-            <h1 class="text-4xl md:text-5xl font-bold leading-tight">
-                Pamper Your Pet, Because They Deserve the Best
-            </h1>
-            <br>
-            <p class="text-gray-600">
-                Discover a world of treats, toys, and essentials handpicked for your furry friends. 
-                Shop now and make tails wag with joy!
-            </p>
-            <br>
-            <button class="bg-yellow-400 px-5 py-2 rounded-lg font-bold cursor-pointer hover:bg-yellow-700 transition animate-bounce">
-                Find a Pet
-            </button>
+          <h1 class="text-4xl md:text-5xl leading-tight">
+            Pamper Your Pet, Because They Deserve the Best
+          </h1>
+          <br>
+          <p class="text-gray-600">
+            Discover a world of treats, toys, and essentials handpicked for your furry friends.
+            Shop now and make tails wag with joy!
+          </p>
+          <br>
+          <button
+            class="bg-yellow-300 px-5 py-2 rounded-lg cursor-pointer hover:bg-yellow-700 transition animate-bounce">
+            Find a Pet
+          </button>
         </div>
-    
+
         <!-- Image Part -->
-        <div class="absolute top-3/4 md:top-16 md:left-16 max-w-7xl md:w-9/12 animate-floating">
-            <img class="w-full h-auto object-cover" src="/c1-assets/cat-big.png" alt="">
+        <div class="absolute top-2/3 md:top-16 md:left-16 max-w-7xl md:w-9/12 h-auto animate-floating">
+          <img class="w-full h-auto object-cover" src="/c1-assets/cat-big.png" alt="">
         </div>
+      </div>
+    </section>
+  </header>
+  <main class="">
+    <section class="md:container mx-auto mt-10 py-12">
+      <div>
+        <h1 class="text-3xl md:text-5xl  px-5 py-6">
+          Browse By Categories
+        </h1>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-6 gap-6 mt-6 p-5">
+        <div class="bg-[#F2D18B] h-64 md:w-52  text-center rounded-xl hover:scale-105 transition-all duration-300">
+          <img class="mx-auto bg-white rounded-full p-5 mt-12" src="/c1-assets/dog-cartoon.png" alt="">
+          <div class="mt-5 space-y-3">
+            <h5 class="">Dog</h5>
+            <p class="">3 Item</p>
+          </div>
+        </div>
+        <div class="bg-[#F2D18B] h-64 md:w-52  text-center rounded-xl hover:scale-105 transition-all duration-300">
+          <img class="mx-auto bg-white rounded-full p-5 mt-12" src="/c1-assets/fish-cartoon.png" alt="">
+          <div class="mt-5 space-y-3">
+            <h5 class="">Dog</h5>
+            <p class="">3 Item</p>
+          </div>
+        </div>
+        <div class="bg-[#F2D18B] h-64 md:w-52 text-center rounded-xl hover:scale-105 transition-all duration-300">
+          <img class="mx-auto bg-white rounded-full p-5 mt-12" src="/c1-assets/cat-cartoon.png" alt="">
+          <div class="mt-5 space-y-3">
+            <h5 class="">Dog</h5>
+            <p class="">3 Item</p>
+          </div>
+        </div>
+        <div class="bg-[#F2D18B] h-64 md:w-52 text-center rounded-xl hover:scale-105 transition-all duration-300">
+          <img class="mx-auto bg-white rounded-full p-5 mt-12" src="/c1-assets/bird-cartoon.png" alt="">
+          <div class="mt-5 space-y-3">
+            <h5 class="">Dog</h5>
+            <p class="">3 Item</p>
+          </div>
+        </div>
+        <div class="bg-[#F2D18B] h-64 md:w-52 text-center rounded-xl hover:scale-105 transition-all duration-300">
+          <img class="mx-auto bg-white rounded-full p-5 mt-12" src="/c1-assets/mouse-cartoon.png" alt="">
+          <div class="mt-5 space-y-3">
+            <h5 class="">Dog</h5>
+            <p class="">3 Item</p>
+          </div>
+        </div>
+        <div class="bg-[#F2D18B] h-64 md:w-52 text-center rounded-xl hover:scale-105 transition-all duration-300">
+          <img class="mx-auto bg-white rounded-full p-5 mt-12" src="/c1-assets/rabbit-cartoon.png" alt="">
+          <div class="mt-5 space-y-3">
+            <h5 class="">Dog</h5>
+            <p class="">3 Item</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="mt-5 md:mt-10 bg-yellow-50 px-8 md:py-20">
+      <div class="container mx-auto">
+        <h1 class="text-3xl md:text-5xl  leading-tight">
+          Trending Pet Products
+        </h1>
+        <div class="flex flex-col md:flex-row  gap-6 mt-20 ">
+          <div class="flex flex-col relative md:flex-row  bg-[#F2D18B] max-w-[500px] h-[400px] p-6 rounded-lg ">
+            <div class="relative z-10 mt-10 ">
+              <h2 class="text-2xl ">T-Shirt for Dog</h2>
+              <br>
+              <p class="text-gray-500">Discover a world of treats, toys and <br> essential handpick for</p>
+              <button class="bg-white px-4 py-2 shadow-lg rounded-lg mt-4">Shop Now</button>
+            </div>
+            <div class="absolute top-46 left-32">
+              <img class="w-40" src="/c1-assets/cute-pet-mid.png" alt="">
+            </div>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-6 md:w-9/12">
+            <div class="flex md:gap-12  items-center bg-white 
+            shadow-lg px-2 py-2 md:px-10 lg:py-4 rounded-lg hover:scale-105 transition-all duration-300">
+              <div class="bg-yellow-100 w-20 rounded-md">
+                <img class="p-1 w-16 h-16 mx-auto" src="/c1-assets/dog-cartoon.png" alt="Dog">
+              </div>
+              <div class="ml-4 flex-1">
+                <div class="flex items-center space-x-2">
+                  <i class="fa-solid fa-star text-sm md:text-2xl text-amber-500"></i>
+                  <h1 class="text-sm ">5.00</h1>
+                </div>
+                <p class="text-sm text-gray-600 mt-2">Pet Bed</p>
+                <p class="text-md font-semibold text-gray-800">$39.99</p>
+              </div>
+            </div>
+            <div class="flex md:gap-12 items-center bg-white 
+            shadow-lg px-2 py-2 md:px-10 lg:py-4 rounded-lg hover:scale-105 transition-all duration-300">
+              <div class="bg-yellow-100 w-20 rounded-md">
+                <img class="p-1 w-16 h-16  mx-auto" src="/c1-assets/fish-cartoon.png" alt="Dog">
+              </div>
+              <div class="ml-4 flex-1">
+                <div class="flex items-center space-x-2">
+                  <i class="fa-solid fa-star text-sm md:text-2xl text-amber-500"></i>
+                  <h1 class="text-sm ">5.00</h1>
+                </div>
+                <p class="text-sm text-gray-600 mt-2">Pet Bed</p>
+                <p class="text-md font-semibold text-gray-800">$39.99</p>
+              </div>
+            </div>
+            <div class="flex md:gap-12 items-center bg-white 
+            shadow-lg px-2 py-2 md:px-10 lg:py-4 rounded-lg hover:scale-105 transition-all duration-300">
+              <div class="bg-yellow-100 w-20 rounded-md">
+                <img class="p-1 w-16 h-16  mx-auto" src="/c1-assets/bird-cartoon.png" alt="Dog">
+              </div>
+              <div class="ml-4 flex-1">
+                <div class="flex items-center space-x-2">
+                  <i class="fa-solid fa-star text-sm md:text-2xl text-amber-500"></i>
+                  <h1 class="text-sm ">5.00</h1>
+                </div>
+                <p class="text-sm text-gray-600 mt-2">Pet Bed</p>
+                <p class="text-md font-semibold text-gray-800">$39.99</p>
+              </div>
+            </div>
+            <div class="flex md:gap-12 items-center bg-white shadow-lg px-2 
+            py-2 md:px-10 lg:py-4 rounded-lg hover:scale-105 transition-all duration-300">
+              <div class="bg-yellow-100 w-20 rounded-md">
+                <img class="p-1 w-16 h-16  mx-auto" src="/c1-assets/rabbit-cartoon.png" alt="Dog">
+              </div>
+              <div class="ml-4 flex-1">
+                <div class="flex items-center space-x-2">
+                  <i class="fa-solid fa-star text-sm md:text-2xl text-amber-500"></i>
+                  <h1 class="text-sm ">5.00</h1>
+                </div>
+                <p class="text-sm text-gray-600 mt-2">Pet Bed</p>
+                <p class="text-md font-semibold text-gray-800">$39.99</p>
+              </div>
+            </div>
+            <div class="flex md:gap-12 items-center bg-white 
+            shadow-lg px-2 py-2 md:px-10 lg:py-4 rounded-lg hover:scale-105 transition-all duration-300">
+              <div class="bg-yellow-100 w-20 rounded-md">
+                <img class="p-1 w-16 h-16  mx-auto" src="/c1-assets/bird-cartoon.png" alt="Dog">
+              </div>
+              <div class="ml-4 flex-1">
+                <div class="flex items-center space-x-2">
+                  <i class="fa-solid fa-star text-sm md:text-2xl text-amber-500"></i>
+                  <h1 class="text-sm ">5.00</h1>
+                </div>
+                <p class="text-sm text-gray-600 mt-2">Pet Bed</p>
+                <p class="text-md font-semibold text-gray-800">$39.99</p>
+              </div>
+            </div>
+            <div class="flex md:gap-12 items-center bg-white 
+            shadow-lg px-2 py-2 md:px-10 lg:py-4 rounded-lg hover:scale-105 transition-all duration-300">
+              <div class="bg-yellow-100 w-20 rounded-md">
+                <img class="p-1 w-16 h-16  mx-auto" src="/c1-assets/pet-couch.png" alt="Dog">
+              </div>
+              <div class="ml-4 flex-1">
+                <div class="flex items-center space-x-2">
+                  <i class="fa-solid fa-star text-sm md:text-2xl text-amber-500"></i>
+                  <h1 class="text-sm ">5.00</h1>
+                </div>
+                <p class="text-sm text-gray-600 mt-2">Pet Bed</p>
+                <p class="text-md font-semibold text-gray-800">$39.99</p>
+              </div>
+            </div>
+            <div class="flex h-28 md:gap-12 items-center bg-white shadow-lg 
+            px-2 py-2 md:px-10 lg:py-4 rounded-lg hover:scale-105 transition-all duration-300">
+              <div class="bg-yellow-100 w-20 rounded-md">
+                <img class="p-1 w-16 h-16  mx-auto" src="/c1-assets/fish-cartoon.png" alt="Dog">
+              </div>
+              <div class="ml-4 flex-1">
+                <div class="flex items-center space-x-2">
+                  <i class="fa-solid fa-star text-sm md:text-2xl text-amber-500"></i>
+                  <h1 class="text-sm ">5.00</h1>
+                </div>
+                <p class="text-sm text-gray-600 mt-2">Pet Bed</p>
+                <p class="text-md font-semibold text-gray-800">$39.99</p>
+              </div>
+            </div>
+            <div class="flex h-28 md:gap-12 items-center bg-white shadow-lg px-2
+             py-2 md:px-10 lg:py-4 rounded-lg hover:scale-105 transition-all duration-300">
+              <div class="bg-yellow-100 w-20 rounded-md">
+                <img class="p-1 w-16 h-16 mx-auto" src="/c1-assets/pet-couch.png" alt="Dog">
+              </div>
+              <div class="ml-4 flex-1">
+                <div class="flex items-center space-x-2">
+                  <i class="fa-solid fa-star text-sm md:text-2xl text-amber-500"></i>
+                  <h1 class="text-sm font-semibold">5.00</h1>
+                </div>
+                <p class="text-sm text-gray-600 mt-2">Pet Bed</p>
+                <p class="text-md font-semibold text-gray-800">$39.99</p>
+              </div>
+            </div>
+            <div class="md:block hidden">
+              <div class="flex  h-28 md:gap-12 items-center bg-white 
+              shadow-lg px-2 py-2 md:px-10 lg:py-4 rounded-lg hover:scale-105 transition-all duration-300">
+                <div class="bg-yellow-100 w-20 rounded-md">
+                  <img class="p-1 w-16 h-16 mx-auto" src="/c1-assets/rabbit-cartoon.png" alt="Dog">
+                </div>
+                <div class="ml-4 flex-1">
+                  <div class="flex items-center space-x-2">
+                    <i class="fa-solid fa-star text-2xl text-amber-500"></i>
+                    <h1 class="text-sm font-semibold">5.00</h1>
+                  </div>
+                  <p class="text-sm text-gray-600 mt-2">Pet Bed</p>
+                  <p class="text-md font-semibold text-gray-800">$39.99</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="md:container mx-auto py-12 px-6">
+      <div class="">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl  leading-tight">Pets Food Categories</h1>
+          <p class="text-gray-500 mt-4 text-base md:text-lg">"Give your pet the best with wholesome, 
+          tasty meals made for every stage of life. Healthy pets start with quality food they’ll love." </p>
+      </div>
+      <br>
+      <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-4 mt-5 gap-6">
+          <div class="bg-white rounded-xl border-1 border-gray-500 shadow-lg p-5">
+              <img class="mx-auto rounded-lg" src="/c1-assets/food-1.webp" alt="">
+              <div class="mt-3">
+                <div class="flex items-center space-x-2">
+                  <i class="fa-solid fa-star text-sm md:text-xl text-amber-500"></i>
+                  <i class="fa-solid fa-star text-sm md:text-xl text-amber-500"></i>
+                  <i class="fa-solid fa-star text-sm md:text-xl text-amber-500"></i>
+                  <i class="fa-solid fa-star text-sm md:text-xl text-amber-500"></i>
+                  <h1 class=" text-xl ">4.00</h1>
+                </div>               
+                  <h3 class="mt-3 text-xl">Collecting Foods for Pets into Discount</h3>
+                  <p class="text-gray-500 mt-4 text-sm md:text-lg ">"All types of food are available at our shop. 
+                    Come visit us and keep your beautiful pets healthy and happy."</p>
+                  <button class="mt-3 bg-yellow-300 px-5 py-2 rounded-lg  cursor-pointer hover:bg-yellow-700 transition ">
+                    Buy Now
+                  </button>
+              </div>
+          </div>
+          <div class="bg-white rounded-xl border-1 border-gray-500 shadow-lg p-5">
+              <img class="mx-auto rounded-lg" src="/c1-assets/food-6.jpeg" alt="">
+              <div class="mt-3">
+                <div class="flex items-center space-x-2">
+                  <i class="fa-solid fa-star text-sm md:text-xl text-amber-500"></i>
+                  <i class="fa-solid fa-star text-sm md:text-xl text-amber-500"></i>
+                  <i class="fa-solid fa-star text-sm md:text-xl text-amber-500"></i>
+                  <i class="fa-solid fa-star text-sm md:text-xl text-amber-500"></i>
+                  <h1 class=" text-xl">4.5</h1>
+                </div>               
+                  <h3 class="mt-3  text-xl">Collecting Foods for Pets into Discount</h3>
+                  <p class="text-gray-500 mt-4 text-sm md:text-lg ">"All types of food are available at our shop. 
+                    Come visit us and keep your beautiful pets healthy and happy."</p>
+                    <button class="mt-3 bg-yellow-300 px-5 py-2 rounded-lg cursor-pointer hover:bg-yellow-700 transition ">
+                      Buy Now
+                    </button>
+              </div>
+          </div>
+          <div class="bg-white rounded-xl border-1 border-gray-500 shadow-lg p-5">
+              <img class="mx-auto rounded-lg"  src="/c1-assets/food-3.webp" alt="">
+              <div class="mt-3">
+                <div class="flex items-center space-x-2">
+                  <i class="fa-solid fa-star text-sm md:text-xl text-amber-500"></i>
+                  <i class="fa-solid fa-star text-sm md:text-xl text-amber-500"></i>
+                  <i class="fa-solid fa-star text-sm md:text-xl text-amber-500"></i>
+                  <i class="fa-solid fa-star text-sm md:text-xl text-amber-500"></i>
+                  <i class="fa-solid fa-star text-sm md:text-xl text-amber-500"></i>
+                  <h1 class=" text-xl">5.00</h1>
+                </div>              
+                  <h3 class="mt-3 text-xl">Collecting Foods for Pets into Discount</h3>
+                  <p class="text-gray-500 mt-4 text-sm md:text-lg ">"All types of food are available at our shop. 
+                    Come visit us and keep your beautiful pets healthy and happy."</p>
+                    <button class="mt-3 bg-yellow-300 px-5 py-2 rounded-lg  cursor-pointer hover:bg-yellow-700 transition ">
+                      Buy Now
+                    </button>
+              </div>
+          </div>
+          <div class="bg-white rounded-xl border-1 border-gray-500 shadow-lg p-5">
+            <img class="mx-auto rounded-lg" src="/c1-assets/food-4.jpg" alt="">
+            <div class="mt-3">
+              <div class="flex items-center space-x-2">
+                <i class="fa-solid fa-star text-sm md:text-xl text-amber-500"></i>
+                <i class="fa-solid fa-star text-sm md:text-xl text-amber-500"></i>
+                <i class="fa-solid fa-star text-sm md:text-xl text-amber-500"></i>
+                <h1 class=" text-xl">3.5</h1>
+              </div>              
+                <h3 class="mt-3 text-xl">Collecting Foods for Pets into Discount</h3>
+                <p class="text-gray-500 mt-4 text-sm md:text-lg ">"All types of food are available at our shop. 
+                  Come visit us and keep your beautiful pets healthy and happy."</p>
+                  <button class="mt-3 bg-yellow-300 px-5 py-2 rounded-lg  cursor-pointer hover:bg-yellow-700 transition ">
+                    Buy Now
+                  </button>
+            </div>
+        </div>
+      </div>
+  </section>
+    <section class="md:container mx-auto px-6 py-12">
+      <div>
+        <h1 class="text-4xl md:text-5xl ">Everyday low Price</h1>
+      </div>
+      <div class="flex gap-10 flex-col mt-10 md:flex-row">
+        <div
+          class=" md:mt-10 bg-gradient-to-r from-pink-200 to-blue-300 md:w-8/12 flex md:h-[480px] h-[380px] justify-center rounded-xl  ">
+          <div class="flex flex-col relative md:flex-row p-6 rounded-lg">
+            <div class="flex items-center">
+              <div class="relative space-y-3 z-10 md:mr-0 mr-20">
+                <p class="text-gray-700 hidden md:block">Under Price</p>
+                <h3 class="text-xl ">Pet Grooming Mitt</h3>
+                <p class="md:text-white text-gray-600 hidden md:block">(Easy Hair Removal)</p>
+                <h1 class="text-3xl text-gray-800">$7.99</h1>
+              </div>
+            </div>
+
+            <div class="relative md:w-96 w-full">
+              <img class="absolute -top-12 -right-16  md:top-1 md:left-12 w-full max-w-full h-auto"
+                src="/c1-assets/cute-dog-mid.png" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="md:mt-10 bg-gradient-to-r from-yellow-50 to-[#F2D18B] md:w-5/12 md:h-[480px] h-[400px]  flex justify-center rounded-xl">
+          <div class="flex flex-col relative md:flex-row p-6 rounded-lg">
+            <div class="relative z-10 space-y-3 md:mr-0 mr-20 md:mt-10">
+              <h2 class="text-2xl">T-Shirt for Dog</h2>
+              <h1 class=" text-2xl text-yellow-400">$7.99</h1>
+            </div>
+            
+            <div class="relative md:w-72 w-full">
+              <img class="absolute -top-8 -right-8 md:top-16 md:right-20 w-full max-w-full h-auto" src="/c1-assets/cute-pet-mid.png" alt="Cute Pet">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="md:container z-10 mx-auto px-6 py-12">
+      <div class="bg-red-50 z-10 md:-mb-72 -mb-80 flex flex-col md:flex-row h-[650px]  
+      md:h-[500px] md:justify-start justify-center items-center gap-10  md:gap-20 px-6 py-12 rounded-xl ">
+        <div class="md:ml-20">
+          <img class="w-full mx-auto" src="/c1-assets/cute-pet-mid.png" alt="">
+        </div>
+        <div class="md:ml-20 space-y-3 md:space-y-5 md:text-left text-center py-">
+          <h1 class="text-3xl md:text-5xl ">Get Pawsome News!</h1>
+          <p class="text-gray-500 ">Exclusive training tips, ticks, product deals and more.</p>
+          <input class="px-6 py-3 w-80 bg-white rounded-lg" 
+          placeholder="Enter Email" type="text">
+          <br>
+          <button class="bg-yellow-300 px-5 py-2 rounded-lg cursor-pointer hover:bg-yellow-700 transition">Subscribe</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="bg-yellow-200 -z-10 relative px-6 py-20 h-[680px] flex items-center">
+    <div class="container mx-auto">
+      <div class="flex flex-col md:flex-row mt-60 md:mt-32 md:justify-between md:items-center">
+        <!-- Logo -->
+        <div>
+          <div class="flex flex-col items-start gap-2 md:mt-0 mt-20">
+            <div class="flex items-center gap-2">
+              <img src="/c1-assets/logo-footer.png" alt="Logo" class="w-8 h-8">
+              <h1 class="text-lg">Browse Pets</h1>
+            </div>
+            <p class="text-sm text-gray-600 mt-2">
+              Discover a world of treats, toys, and <br>
+              essentials handpicked for your furry <br>
+              friends.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Middle -->
+        <div class="mt-10 md:mt-0 flex ">
+          <ul class="space-y-3">
+            <li>
+              <a href="#" class="text-black ">Breeds</a>
+            </li>
+            <li>
+              <a href="#" class="text-black ">Find a Pet</a>
+            </li>
+            <li>
+              <a href="#" class="text-black md:w-auto w-40 whitespace-nowrap">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+  
+        <!-- Social Icons -->
+        <div class="mt-10 md:mt-0 text-left">
+          <p class="text-lg mb-2">Follow Us</p>
+          <div class="space-x-4">
+            <i class="fa-brands fa-facebook hover:text-blue-600"></i>
+            <i class="fa-brands fa-instagram hover:text-pink-500"></i>
+            <i class="fa-brands fa-linkedin hover:text-blue-700"></i>
+            <i class="fa-brands fa-youtube hover:text-red-600"></i>
+          </div>
+        </div>
+      </div>
     </div>
-   </header>
+  </footer>
 </body>
 </html>
